@@ -18,7 +18,7 @@ public class PositiveTests extends BaseTestClass {
 
 	@Test
 	public void verifyRegisterUser() {
-
+//testing git 
 		pageHeader.clickOnSignUpOrLogin();
 
 		boolean y = signUpOrLoginPage.newUserSignUpIsVisible();

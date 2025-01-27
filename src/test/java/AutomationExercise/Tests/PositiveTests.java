@@ -16,6 +16,7 @@ import AutomationExercise.TestComponents.BaseTestClass;
 
 public class PositiveTests extends BaseTestClass {
 
+	
 	@Test
 	public void verifyRegisterUser() {
 //testing git for 2nd time
@@ -45,5 +46,9 @@ public class PositiveTests extends BaseTestClass {
 		accountCreatedorDeletedConfirmationPage.accountDeletedConfirmationDisplayed();
 
 	}
+
+	//New Change 3
+	
+	
 
 }

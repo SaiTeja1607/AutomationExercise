@@ -72,5 +72,15 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/masineni.s.teja.INTIMETEC/.m2/repository/org/apache/poi/poi/5.4.0/poi-5.4.0.jar" sourcepath="C:/Users/masineni.s.teja.INTIMETEC/.m2/repository/org/apache/poi/poi/5.4.0/poi-5.4.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.apache.poi"/>
+			<attribute name="maven.artifactId" value="poi"/>
+			<attribute name="maven.version" value="5.4.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/masineni.s.teja.INTIMETEC/OneDrive - InTimeTec Visionsoft Pvt. Ltd.,/Documents/Selenium/eclipse-java-2023-12-R-win32-x86_64/eclipse/plugins/org.testng_7.4.0.r202105021533.jar" sourcepath="C:/Users/masineni.s.teja.INTIMETEC/OneDrive - InTimeTec Visionsoft Pvt. Ltd.,/Documents/Selenium/eclipse-java-2023-12-R-win32-x86_64/eclipse/plugins/org.testng.source_7.4.0.r202105021533.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

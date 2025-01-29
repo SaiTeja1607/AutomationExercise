@@ -13,6 +13,7 @@ public class AccountCreatedorDeletedConfirmationPage extends ReusableMethods {
 
 	WebDriver driver;
 	public AccountCreatedorDeletedConfirmationPage(WebDriver driver) {
+		super(driver);
 		
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

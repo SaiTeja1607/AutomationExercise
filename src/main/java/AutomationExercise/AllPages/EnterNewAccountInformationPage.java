@@ -12,6 +12,7 @@ public class EnterNewAccountInformationPage extends ReusableMethods {
 	WebDriver driver;
 
 	public EnterNewAccountInformationPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

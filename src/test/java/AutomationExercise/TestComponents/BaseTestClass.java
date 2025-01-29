@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -24,6 +25,7 @@ public class BaseTestClass {
 	
 	Properties prop;
 	
+	protected HomePage homePage;
 	protected PageHeader pageHeader;
 	protected AccountCreatedorDeletedConfirmationPage accountCreatedorDeletedConfirmationPage;
 	protected EnterNewAccountInformationPage enterNewAccountInformationPage;
@@ -58,10 +60,34 @@ public class BaseTestClass {
 	@BeforeMethod(dependsOnMethods= {"navigateToUrl"})
 	public void setUpObjects()
 	{
+		 homePage = new HomePage(driver);
 		  pageHeader = new PageHeader(driver);
 		  signUpOrLoginPage = new SignUpOrLoginPage(driver);
 		  enterNewAccountInformationPage = new EnterNewAccountInformationPage(driver);
 		  accountCreatedorDeletedConfirmationPage = new AccountCreatedorDeletedConfirmationPage(driver);	
+	}
+	
+	@BeforeMethod(dependsOnMethods="setUpObjects")
+	public void createUsersForTesting(ITestResult result)
+	{
+	String testName=	result.getMethod().getMethodName();
+	if(testName.equals("loginWithCorrectCredentials"))
+	{
+		pageHeader.clickOnSignUpOrLogin();
+		signUpOrLoginPage.enterNewUserNameAndEmail( "Tejas","Tejas@test.com");
+		signUpOrLoginPage.clickOnSignUp();
+		enterNewAccountInformationPage.enterNewUserDetails("Mr", "Teja111", "7", "May", "1996");
+		enterNewAccountInformationPage.clickOnsignUpForNewsletterCheckBox();
+		enterNewAccountInformationPage.clickOnReceiveSpecialOffersCheckBox();
+		enterNewAccountInformationPage.fillUserDetails("Teja", "Patel", "ITT", "Test Address", "India", "Telangana",
+				"Hyderabad", "500001", "9876543210");
+		enterNewAccountInformationPage.clickOnCreateAccountButton();
+
+		accountCreatedorDeletedConfirmationPage.accountCreatedConfirmationDisplayed();
+		accountCreatedorDeletedConfirmationPage.clickOnContinue();
+		pageHeader.clickOnLogOutButton();
+		pageHeader.clickOnHome();
+	}
 	}
 	
 	

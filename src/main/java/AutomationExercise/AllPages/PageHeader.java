@@ -13,6 +13,7 @@ public class PageHeader extends ReusableMethods {
 
  public PageHeader(WebDriver driver)
 	{
+	 super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}

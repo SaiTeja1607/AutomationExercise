@@ -1,10 +1,19 @@
 package AutomationExercise.ReusableMethods;
 
+import java.util.HashMap;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class ReusableMethods {
 
+	WebDriver driver;
+	public  ReusableMethods(WebDriver driver)
+	{
+		this.driver=driver;
+	}
 	
 	public void enterDataInTextField(WebElement element, String text)
 	{
@@ -34,6 +43,25 @@ public class ReusableMethods {
 	public Boolean webElementIsDisplayed(WebElement element)
 	{
 	return	element.isDisplayed();
+	}
+	
+	public String  getTitleOfPage()
+	{
+	 return driver.getTitle();
+	}
+	
+	public void RandomUserCreds()
+	{
+		HashMap<String, String> creds = new HashMap<String, String>();
+		String userName = RandomStringUtils.randomAlphabetic(10);
+		String userEmail = RandomStringUtils.random(6).concat("@test.com");
+		String password = RandomStringUtils.random(8);
+		creds.put("randomUserName", userName);
+		creds.put("randomUserEmail", userEmail);
+		creds.put("RandomPassword", password);
+		
+		System.out.println(creds.keySet());
 		
 	}
+	
 }

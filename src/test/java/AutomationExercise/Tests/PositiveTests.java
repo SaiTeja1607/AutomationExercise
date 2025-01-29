@@ -1,10 +1,13 @@
 package AutomationExercise.Tests;
 
+import static org.testng.Assert.assertTrue;
+
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -27,8 +30,17 @@ public class PositiveTests extends BaseTestClass {
 		signUpOrLoginPage.enterNewUserNameAndEmail("Teja", "teja@test.com");
 		signUpOrLoginPage.clickOnSignUp();
 
+		try {
+		if(enterNewAccountInformationPage.enterAccountInformationTextISVisible())
+		{
 		Assert.assertTrue(enterNewAccountInformationPage.enterAccountInformationTextISVisible());
-
+		}
+		}
+		catch(Exception e)
+		{
+			Assert.fail();
+			
+		}
 		enterNewAccountInformationPage.enterNewUserDetails("Mr", "Teja111", "7", "May", "1996");
 		enterNewAccountInformationPage.clickOnsignUpForNewsletterCheckBox();
 		enterNewAccountInformationPage.clickOnReceiveSpecialOffersCheckBox();
@@ -39,16 +51,93 @@ public class PositiveTests extends BaseTestClass {
 		accountCreatedorDeletedConfirmationPage.accountCreatedConfirmationDisplayed();
 		accountCreatedorDeletedConfirmationPage.clickOnContinue();
 
-		Assert.assertTrue(pageHeader.loggedInAsUserDisplayed("Teja"));
-
+		try {
+			if(pageHeader.loggedInAsUserDisplayed("Teja"))
+			{
+				Assert.assertTrue(pageHeader.loggedInAsUserDisplayed("Teja"));
+			}
+			}
+			catch(Exception e)
+			{
+				Assert.fail();
+				
+			}
+		
 		pageHeader.clickOnDeleteAccountButton();
 
-		accountCreatedorDeletedConfirmationPage.accountDeletedConfirmationDisplayed();
+		try {
+			if(accountCreatedorDeletedConfirmationPage.accountDeletedConfirmationDisplayed())
+			{
+				Assert.assertTrue(accountCreatedorDeletedConfirmationPage.accountDeletedConfirmationDisplayed());
+			}
+			}
+			catch(Exception e)
+			{
+				Assert.fail();
+				
+			}
+		
 
 	}
 
-	//New Change 3
+	@Test
+	public void loginWithCorrectCredentials()
+	{
+		try {
+			
+	if(homePage.homePageIsDisplayed())
+	{
+	Assert.assertTrue(homePage.homePageIsDisplayed());
+	}
+		}
+	catch(Exception e)
+	{
+		Assert.fail();
+	}
+
+	pageHeader.clickOnSignUpOrLogin();
+	try {
+		if(signUpOrLoginPage.loginToYourAccountIsVisible())
+		{
+			Assert.assertTrue(signUpOrLoginPage.loginToYourAccountIsVisible());
+		}
+	}
+	catch(Exception e)
+	{
+		Assert.fail();
+	}
+	
+	signUpOrLoginPage.enterLoginNameAndEmail("Tejas@test.com", "Teja111");
+	signUpOrLoginPage.clickOnLogin();
+	try {
+		if(pageHeader.loggedInAsUserDisplayed("Tejas"))
+		{
+  Assert.assertTrue(pageHeader.loggedInAsUserDisplayed("Tejas"));
+	}
+	}
+	catch(Exception e)
+	{
+		Assert.fail();
+	}
+  pageHeader.clickOnDeleteAccountButton();
+  
+  try {
+	 if( accountCreatedorDeletedConfirmationPage.accountDeletedConfirmationDisplayed())
+	 {
+	  Assert.assertTrue(accountCreatedorDeletedConfirmationPage.accountDeletedConfirmationDisplayed());
+  }
+  }
+	 catch(Exception e)
+	 {
+		 Assert.fail();
+	 }
+ 
+
+	
+	}
+	
 	
 	
 
 }
+

@@ -16,7 +16,7 @@ public class Listeners extends BaseTestClass implements ITestListener{
 	ExtentTest extentTest;
 	public  void onTestStart(ITestResult result) {
 	    
-	extentReport=	extentReporterNG.ExtentReport();
+	
     extentTest=	extentReport.createTest(result.getMethod().getMethodName());
 	
 	  }
@@ -48,7 +48,7 @@ public class Listeners extends BaseTestClass implements ITestListener{
 
 	 
 	  public  void onStart(ITestContext context) {
-	    
+		extentReport=	extentReporterNG.ExtentReport();
 	  }
 
 	  

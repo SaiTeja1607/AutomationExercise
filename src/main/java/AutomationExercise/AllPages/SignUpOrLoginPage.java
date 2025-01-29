@@ -12,6 +12,7 @@ public class SignUpOrLoginPage extends ReusableMethods {
 	WebDriver driver;
 	public SignUpOrLoginPage(WebDriver driver)
 	{
+		super(driver);
 		this.driver= driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -46,6 +47,11 @@ public boolean newUserSignUpIsVisible()
 	return webElementIsDisplayed(newUserSignUpText);
 }
 
+public Boolean loginToYourAccountIsVisible()
+{
+return	webElementIsDisplayed(logInToYourAccountText);
+}
+
 public void enterLoginNameAndEmail(String emailAddress, String password)
 {
 	enterDataInTextField(loginEmailAddressField, emailAddress);
@@ -62,5 +68,11 @@ public void clickOnSignUp()
 {
 	clickOnElement(signUpButton);
 }
+public void clickOnLogin()
+{
+	clickOnElement(loginButton);
+}
+
+
 
 }

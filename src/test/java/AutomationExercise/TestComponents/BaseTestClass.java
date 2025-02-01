@@ -67,10 +67,12 @@ public class BaseTestClass {
 		  accountCreatedorDeletedConfirmationPage = new AccountCreatedorDeletedConfirmationPage(driver);	
 	}
 	
+	//This BeforeMethod will run only before the methods specified under Required Methods
 	@BeforeMethod(dependsOnMethods="setUpObjects")
 	public void createUsersForTesting(ITestResult result)
 	{
 	String testName=	result.getMethod().getMethodName();
+	//Required methods
 	if(testName.equals("loginWithCorrectCredentials"))
 	{
 		pageHeader.clickOnSignUpOrLogin();

@@ -11,7 +11,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.DataProvider;
 
 public class DataProviderClass {
-
+	
+	//This Data Provider returns one userEmail, password for each test run
 	@DataProvider(name="loginData")
 	public Object[][] loginData() throws IOException
 	{

@@ -55,6 +55,7 @@ public class BaseTestClass {
 		return driver;
 	}
 	
+  
 	@BeforeMethod(dependsOnMethods= {"navigateToUrl"})
 	public void setUpObjects()
 	{

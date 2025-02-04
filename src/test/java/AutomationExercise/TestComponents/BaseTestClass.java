@@ -1,10 +1,14 @@
 package AutomationExercise.TestComponents;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -17,6 +21,7 @@ import AutomationExercise.AllPages.EnterNewAccountInformationPage;
 import AutomationExercise.AllPages.HomePage;
 import AutomationExercise.AllPages.PageHeader;
 import AutomationExercise.AllPages.SignUpOrLoginPage;
+
 
 public class BaseTestClass {
 
@@ -91,6 +96,21 @@ public class BaseTestClass {
 		pageHeader.clickOnHome();
 	}
 	}
+	
+	public String TakeScreenshot(String testCaseName, WebDriver driver) throws IOException
+	{
+		String screenshotName = testCaseName+".png";
+		  String screenshotPath=System.getProperty("user.dir")+"\\screenshots\\"+screenshotName;
+		  if(driver!=null)
+		  {
+		 TakesScreenshot ss=(TakesScreenshot)driver;
+			File srcFile= ss.getScreenshotAs(OutputType.FILE);
+			File destLocation=new File(screenshotPath);
+			FileUtils.copyFile(srcFile, destLocation);		
+	}
+		  return screenshotPath;
+	}
+
 	
 	
 	

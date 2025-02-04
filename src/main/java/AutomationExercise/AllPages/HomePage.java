@@ -1,5 +1,7 @@
 package AutomationExercise.AllPages;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -18,10 +20,12 @@ public class HomePage extends ReusableMethods {
 	}
 	
 	
-	public boolean homePageIsDisplayed()
+	public boolean homePageIsDisplayed() throws IOException
 	{
 	String title=	getTitleOfPage();
+	
 return	title.equals("Automation exercise");
+
 	}
 	
 	

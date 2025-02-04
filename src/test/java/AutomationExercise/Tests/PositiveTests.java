@@ -22,7 +22,7 @@ public class PositiveTests extends BaseTestClass {
 	
 	@Test
 	public void verifyRegisterUser() {
-//testing git for 2nd time
+
 		pageHeader.clickOnSignUpOrLogin();
 
 		boolean y = signUpOrLoginPage.newUserSignUpIsVisible();
@@ -136,8 +136,18 @@ public class PositiveTests extends BaseTestClass {
 	
 	}
 	
+	@Test
+	public void FailTest()
+	{
+
+Assert.assertFalse(true);
+	
 	
 	
 
+}
+	
+	
+	
 }
 

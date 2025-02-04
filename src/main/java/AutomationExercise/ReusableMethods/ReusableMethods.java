@@ -1,10 +1,16 @@
 package AutomationExercise.ReusableMethods;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v129.page.model.Screenshot;
 import org.openqa.selenium.support.ui.Select;
 
 public class ReusableMethods {
@@ -59,9 +65,8 @@ public class ReusableMethods {
 		creds.put("randomUserName", userName);
 		creds.put("randomUserEmail", userEmail);
 		creds.put("RandomPassword", password);
-		
-		System.out.println(creds.keySet());
-		
+		System.out.println(creds.keySet());	
 	}
+	
 	
 }

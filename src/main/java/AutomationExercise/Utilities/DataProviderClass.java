@@ -17,7 +17,7 @@ public class DataProviderClass {
 	{
 
 		DataFormatter format = new DataFormatter();
-		FileInputStream fis = new FileInputStream("C:\\Users\\masineni.s.teja.INTIMETEC\\eclipse-workspace\\AutomationExercise\\TestData.xlsx");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\TestData.xlsx");
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	XSSFSheet sheet=	workbook.getSheetAt(0);
 	XSSFRow row =	sheet.getRow(0);

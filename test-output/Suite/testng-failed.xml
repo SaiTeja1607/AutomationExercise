@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="url" value="https://www.automationexercise.com/"/>
   <listeners>
     <listener class-name="AutomationExercise.TestComponents.Listeners"/>
   </listeners>
@@ -9,10 +8,11 @@
     <classes>
       <class name="AutomationExercise.Tests.PositiveTests">
         <methods>
-          <include name="closeBrowser"/>
           <include name="setUpObjects"/>
+          <include name="closeBrowser"/>
           <include name="navigateToUrl"/>
-          <include name="verifyRegisterUser"/>
+          <include name="FailTest"/>
+          <include name="createUsersForTesting"/>
         </methods>
       </class> <!-- AutomationExercise.Tests.PositiveTests -->
     </classes>

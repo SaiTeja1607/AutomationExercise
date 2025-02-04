@@ -39,7 +39,7 @@ public class BaseTestClass {
 	public void initializeBrowser() throws IOException
 	{
 		 prop= new Properties();
-		FileInputStream fis = new FileInputStream("C:\\Users\\masineni.s.teja.INTIMETEC\\eclipse-workspace\\AutomationExercise\\src\\main\\java\\AutomationExercise\\Utilities\\GlobalData.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\AutomationExercise\\Utilities\\GlobalData.properties");
 		prop.load(fis);
 	String browserName =	prop.getProperty("browser");
 		
